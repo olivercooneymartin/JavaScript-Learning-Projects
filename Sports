@@ -1,0 +1,46 @@
+const team = {
+  _players: [
+    {firstName: "Lionel", lastName: "Messi", age: 37},
+    {firstName: "Cristiano", lastName: "Ronaldo", age: 39},
+    {firstName: "Karim", lastName: "Benzema", age: 37},
+    ], 
+  _games: [
+    {opponent: "Manchester City", teamPoints: 7, opponentPoints: 3},
+    {opponent: "Real Madrid", teamPoints: 12, opponentPoints: 4},
+    {opponent: "Bayern Munich", teamPoints: 2, opponentPoints: 1},
+    ],
+  get players() {
+    return this._players;
+  },
+  get games() {
+    return this._games;
+  },
+  addPlayer(newFirstName, newLastName, newAge) {
+    let player = {
+      firstName: newFirstName,
+      lastName: newLastName,
+      age: newAge,
+    };
+    this.players.push(player);
+  },
+  addGame(newOpponent, newTeamPoints, newOpponentPoints) {
+    let game = {
+      opponent: newOpponent,
+      teamPoints: newTeamPoints,
+      opponentPoints: newOpponentPoints,
+    };
+    this.games.push(game);
+  }
+};
+
+team.addPlayer("Bugs", "Bunny", 76);
+
+team.addGame("Titans", 100, 98);
+
+console.log(team._players);
+
+console.log(team._games);
+
+
+
+
