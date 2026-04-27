@@ -1,20 +1,28 @@
+// This program creates a menu object with a meal and price, and displays today's special.
+
 const menu = {
-  _meal : "",
-  _price : 0,
+  _meal: "", // Stores the meal name (private-style property)
+  _price: 0, // Stores the price (private-style property)
+
+  // Setter for meal - only accepts strings
   set meal(mealToCheck) {
     if (typeof mealToCheck === "string") {
-      return this._meal = mealToCheck;
+      this._meal = mealToCheck;
     } else {
-      return "error";
+      console.log("Error: meal must be a string");
     }
   },
+
+  // Setter for price - only accepts numbers
   set price(priceToCheck) {
     if (typeof priceToCheck === "number") {
-      return this._price = priceToCheck;
+      this._price = priceToCheck;
     } else {
-      return "error";
+      console.log("Error: price must be a number");
     }
   },
+
+  // Getter that returns today's special if both meal and price are set
   get todaysSpecial() {
     if (this._meal && this._price) {
       return `The special is ${this._meal} and it is ${this._price} dollars`;
@@ -24,7 +32,9 @@ const menu = {
   },
 };
 
+// Setting values using the setters
 menu.meal = "Pizza";
 menu.price = 5;
 
+// Prints today's special
 console.log(menu.todaysSpecial);
