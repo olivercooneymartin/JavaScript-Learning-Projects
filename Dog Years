@@ -1,13 +1,17 @@
-const myAge = 24; // my age
-let earlyYears = (10.5 * 2); // early years
-let laterYears = (myAge - 2); // later years
+// This program converts a person's age from human years into dog years.
 
-laterYears *= 4;
+const myAge = 24; // Stores my current age in human years
 
-console.log(earlyYears, laterYears);
+let earlyYears = 10.5 * 2; // The first two human years count as 10.5 dog years each
 
-let myAgeInDogYears = earlyYears + laterYears;
+let laterYears = myAge - 2; // Stores the remaining human years after the first two years
 
-myName = "Oliver".toLowerCase();
+laterYears *= 4; // Each later human year counts as 4 dog years
 
-console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`);
+let myAgeInDogYears = earlyYears + laterYears; // Combines early years and later years into total dog years
+
+const myName = "Oliver".toLowerCase(); // Stores my name in lowercase
+
+console.log(
+  `My name is ${myName}. I am ${myAge} years old in human years, which is ${myAgeInDogYears} years old in dog years.`
+);
