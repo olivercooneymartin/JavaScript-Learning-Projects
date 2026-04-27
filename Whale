@@ -1,25 +1,34 @@
-const input = "whale talk";
+// This program converts a phrase into "whale talk" by extracting and modifying vowels.
 
-const vowels = ["a", "e", "i", "o", "u"];
+const input = "whale talk"; // The original phrase
 
-let resultArray = []
+const vowels = ["a", "e", "i", "o", "u"]; // List of vowels to check against
 
+let resultArray = []; // Will store the vowels found in the input
+
+// Loops through each character in the input string
 for (let i = 0; i < input.length; i++) {
+  // If the character is "e", add it again (special rule)
   if (input[i] === "e") {
     resultArray.push(input[i]);
   }
+
+  // If the character is "u", add it again (special rule)
   if (input[i] === "u") {
     resultArray.push(input[i]);
   }
+
+  // Loops through the vowels array to check for matches
   for (let j = 0; j < vowels.length; j++) {
     if (input[i] === vowels[j]) {
-      resultArray.push(vowels[j]);
+      resultArray.push(vowels[j]); // Adds the vowel to the result array
     }
   }
 }
 
-console.log(resultArray);
+console.log(resultArray); // Logs the array of vowels
 
+// Joins the array into a string, separates with spaces, and converts to uppercase
 const resultString = resultArray.join(" ").toUpperCase();
 
-console.log(resultString);
+console.log(resultString); // Logs the final whale talk string
