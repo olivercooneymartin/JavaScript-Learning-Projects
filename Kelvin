@@ -1,8 +1,13 @@
-// the temp is 293 kelvin, it is constant
-const kelvin = 293;
-// celsius is 273 less than kelvin
-let celsius  = kelvin - 273;
-// algo for fahrenheit 
-let fahrenheit = Math.floor((celsius * (9/5) + 32));
+// This program converts a temperature from Kelvin to Celsius and then to Fahrenheit.
 
+// The temperature in Kelvin (constant value)
+const kelvin = 293;
+
+// Celsius is 273 degrees less than Kelvin
+let celsius = kelvin - 273;
+
+// Converts Celsius to Fahrenheit using the formula, then rounds it down
+let fahrenheit = Math.floor(celsius * (9 / 5) + 32);
+
+// Prints the final temperature in Fahrenheit
 console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
