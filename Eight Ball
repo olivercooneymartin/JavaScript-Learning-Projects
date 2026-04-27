@@ -1,46 +1,47 @@
-let userName = "Oliver";
+// This program simulates a Magic 8 Ball that gives a random answer to a user's question.
 
+let userName = "Oliver"; // Stores the user's name
 
+// If the user has a name, greet them personally, otherwise use a generic greeting
 userName ? console.log(`Hello ${userName}`) : console.log("Hello!");
 
+let userQuestion = "Am I good?"; // Stores the user's question
 
-let userQuestion = "Am I good?";
-
-
+// Prints the user's question to the console
 console.log(`${userName} asks: ` + userQuestion);
 
+// Generates a random number between 0 and 7
 let randomNumber = Math.floor(Math.random() * 8);
 
-let eightBall = "";
+let eightBall = ""; // Will store the Magic 8 Ball's response
 
+// Uses a switch statement to determine the response based on the random number
 switch (randomNumber) {
+  case 0:
+    eightBall = "Yes";
+    break;
   case 1:
-    console.log("It is certain");
+    eightBall = "It is certain";
     break;
   case 2:
-    console.log("It is decidedly so");
+    eightBall = "It is decidedly so";
     break;
   case 3:
-    console.log("Reply hazy try again");
+    eightBall = "Reply hazy try again";
     break;
   case 4:
-    console.log("Cannot predict now");
+    eightBall = "Cannot predict now";
     break;
   case 5:
-    console.log("Do not count on it");
+    eightBall = "Do not count on it";
     break;
   case 6:
-    console.log("My sources say no");
+    eightBall = "My sources say no";
     break;
   case 7:
-    console.log("Outlook not so good");
-    break;
-  case 8:
-    console.log("Signs point to yes");
-    break;
-  case 0:
-    eightBall += "Yes";
+    eightBall = "Outlook not so good";
     break;
 }
 
-
+// Prints the Magic 8 Ball's response
+console.log(eightBall);
