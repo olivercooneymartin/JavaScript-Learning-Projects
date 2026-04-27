@@ -1,22 +1,30 @@
-let raceNumber = Math.floor(Math.random() * 1000);
+// This program assigns a race time and race number based on a runner's age and registration status.
 
-let ifEarly = false;
+let raceNumber = Math.floor(Math.random() * 1000); // Generates a random race number between 0–999
 
-let runnerAge = 18;
+let ifEarly = false; // Indicates whether the runner registered early (true or false)
 
+let runnerAge = 18; // Stores the runner's age
+
+// Adult runners who registered early get a higher race number
 if (runnerAge > 18 && ifEarly) {
   raceNumber += 1000;
-} 
+}
 
+// Determines race time based on age and registration status
 if (runnerAge > 18 && ifEarly) {
+  // Adult and early registration
   console.log(`You will race at 9:30am, your race number is ${raceNumber}`);
 
 } else if (runnerAge > 18 && ifEarly === false) {
+  // Adult but did not register early
   console.log(`You will race at 11am, your number is ${raceNumber}`);
 
 } else if (runnerAge < 18) {
-  console.log(`You will race at 12:30 PM, your number is ${raceNumber}`); 
+  // Youth runners
+  console.log(`You will race at 12:30 PM, your number is ${raceNumber}`);
 
 } else {
-  console.log("See the registration desk!")
+  // Exactly 18 years old
+  console.log("See the registration desk!");
 }
