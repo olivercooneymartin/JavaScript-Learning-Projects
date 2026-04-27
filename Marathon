@@ -1,50 +1,55 @@
+// This program assigns a random athletic event and calculates how many training days are needed.
 
-
+// Returns a random event from three possible options
 const getRandEvent = () => {
-  const random = Math.floor(Math.random() * 3);
+  const random = Math.floor(Math.random() * 3); // Generates a number from 0 to 2
+
   if (random === 0) {
-    return 'Marathon';
+    return "Marathon";
   } else if (random === 1) {
-    return 'Triathlon';
+    return "Triathlon";
   } else if (random === 2) {
-    return 'Pentathlon';
+    return "Pentathlon";
   }
 };
 
-const getTrainingDays = event => {
-  let days = 0;
-  if (event === 'Marathon') {
+// Determines how many training days are needed based on the event
+const getTrainingDays = (event) => {
+  let days = 0; // Default value
+
+  if (event === "Marathon") {
     days = 50;
-  } else if (event === 'Triathlon') {
+  } else if (event === "Triathlon") {
     days = 100;
-  } else if (event === 'Pentathlon') {
+  } else if (event === "Pentathlon") {
     days = 200;
   }
 
-  return days;
+  return days; // Returns the number of training days
 };
 
+// Logs the athlete's event to the console
 const logEvent = (name, event) => {
   console.log(`${name}'s event is: ${event}`);
 };
 
+// Logs how many days the athlete needs to train
 const logTime = (name, days) => {
   console.log(`${name}'s time to train is: ${days} days`);
 };
 
-const event = getRandEvent();
-const days = getTrainingDays(event);
+// First athlete
 const name = "Nala";
+const event = getRandEvent(); // Gets a random event
+const days = getTrainingDays(event); // Gets training days based on the event
 
+logEvent(name, event); // Prints the event
+logTime(name, days); // Prints the training time
 
+// Second athlete
+const name2 = "Warren";
+const event2 = getRandEvent(); // Gets another random event
+const days2 = getTrainingDays(event2); // Gets training days for the second athlete
 
-logEvent(name, event);
-logTime(name, days);
-
-
-const event2 = getRandEvent();
-const days2 = getTrainingDays(event2);
-const name2 = 'Warren';
-
-logEvent(name2, event2);
-logTime(name2, days2);
+logEvent(name2, event2); // Prints the event
+logTime(name2, days2); // Prints the training time
