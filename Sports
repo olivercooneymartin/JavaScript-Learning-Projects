@@ -1,46 +1,59 @@
+// This program creates a team object that stores players and games, and allows adding new ones.
+
 const team = {
+  // Array of player objects
   _players: [
-    {firstName: "Lionel", lastName: "Messi", age: 37},
-    {firstName: "Cristiano", lastName: "Ronaldo", age: 39},
-    {firstName: "Karim", lastName: "Benzema", age: 37},
-    ], 
+    { firstName: "Lionel", lastName: "Messi", age: 37 },
+    { firstName: "Cristiano", lastName: "Ronaldo", age: 39 },
+    { firstName: "Karim", lastName: "Benzema", age: 37 },
+  ],
+
+  // Array of game objects
   _games: [
-    {opponent: "Manchester City", teamPoints: 7, opponentPoints: 3},
-    {opponent: "Real Madrid", teamPoints: 12, opponentPoints: 4},
-    {opponent: "Bayern Munich", teamPoints: 2, opponentPoints: 1},
-    ],
+    { opponent: "Manchester City", teamPoints: 7, opponentPoints: 3 },
+    { opponent: "Real Madrid", teamPoints: 12, opponentPoints: 4 },
+    { opponent: "Bayern Munich", teamPoints: 2, opponentPoints: 1 },
+  ],
+
+  // Getter for players array
   get players() {
     return this._players;
   },
+
+  // Getter for games array
   get games() {
     return this._games;
   },
+
+  // Adds a new player to the players array
   addPlayer(newFirstName, newLastName, newAge) {
     let player = {
       firstName: newFirstName,
       lastName: newLastName,
       age: newAge,
     };
-    this.players.push(player);
+
+    this.players.push(player); // Uses getter to access array
   },
+
+  // Adds a new game to the games array
   addGame(newOpponent, newTeamPoints, newOpponentPoints) {
     let game = {
       opponent: newOpponent,
       teamPoints: newTeamPoints,
       opponentPoints: newOpponentPoints,
     };
-    this.games.push(game);
-  }
+
+    this.games.push(game); // Uses getter to access array
+  },
 };
 
+// Adds a new player
 team.addPlayer("Bugs", "Bunny", 76);
 
+// Adds a new game
 team.addGame("Titans", 100, 98);
 
+// Logs updated players and games
 console.log(team._players);
-
 console.log(team._games);
-
-
-
-
