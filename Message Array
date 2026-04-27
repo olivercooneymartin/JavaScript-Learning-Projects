@@ -1,19 +1,33 @@
-let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+// This program modifies an array of words to form a corrected and improved message.
 
+let secretMessage = [
+  'Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily',
+  'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you',
+  'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'
+];
+
+// Logs the original length of the array
 console.log(secretMessage.length);
 
-secretMessage.pop("JavaScript");
+// Removes the last word from the array (no argument needed for pop)
+secretMessage.pop();
 
-console.log(secretMessage.length);
+console.log(secretMessage.length); // Logs the new length after removal
 
-secretMessage.push("to", "Program");
+// Adds new words to the end of the array
+secretMessage.push('to', 'Program');
 
-secretMessage[7] = "right";
+// Replaces the word at index 7 with "right"
+secretMessage[7] = 'right';
 
+// Removes the first word from the array
 secretMessage.shift();
 
-secretMessage.unshift("Programming");
+// Adds a new word to the beginning of the array
+secretMessage.unshift('Programming');
 
-secretMessage.splice(6, 5, "know");
+// Removes 5 elements starting at index 6 and replaces them with "know"
+secretMessage.splice(6, 5, 'know');
 
-console.log(secretMessage.join(" "));
+// Joins the array into a single string and prints the final message
+console.log(secretMessage.join(' '));
